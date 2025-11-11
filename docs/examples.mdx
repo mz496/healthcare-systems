@@ -3,9 +3,72 @@ sidebar_position: 1
 ---
 
 import { Counter } from '@site/src/components/Counter';
+import { FootnoteRef, Footnote, FootnoteList } from '@site/src/components/Footnote';
 
 # Examples
+
+## Interactive Counter
 
 Here is a stateful React component:
 
 <Counter />
+
+---
+
+## Footnotes
+
+This section demonstrates how to use footnotes with custom React components.
+
+### How Footnotes Work
+
+Footnotes allow you to cite sources or add additional context without cluttering the main text. Here's an example with custom labels and slugs:
+
+The healthcare industry in the United States is valued at over $4 trillion annually<FootnoteRef slug="cms-data" label="source1" />. Many countries are working to improve universal healthcare coverage<FootnoteRef slug="who-report" label="WHO2023" />, while others focus on reducing costs through preventive care<FootnoteRef slug="cdc-preventive" label="cdc-report" />.
+
+You can also reference the same footnote multiple times. For instance, the WHO report<FootnoteRef slug="who-report" label="WHO2023" /> mentions this again.
+
+### Multiple References
+
+Some facts require multiple sources. The average life expectancy has increased globally<FootnoteRef slug="cms-data" label="source1" /><FootnoteRef slug="who-report" label="WHO2023" /> over the past century.
+
+---
+
+### References
+
+<FootnoteList>
+  <Footnote slug="cms-data" label="source1">
+    Centers for Medicare & Medicaid Services. "National Health Expenditure Data." 2024.
+  </Footnote>
+  <Footnote slug="who-report" label="WHO2023">
+    World Health Organization. "Universal Health Coverage Report 2023." WHO Publications.
+  </Footnote>
+  <Footnote slug="cdc-preventive" label="cdc-report">
+    CDC. "Preventive Care and Cost Reduction Study." Centers for Disease Control and Prevention, 2024.
+  </Footnote>
+</FootnoteList>
+
+---
+
+### Usage
+
+**Inline reference:**
+```jsx
+<FootnoteRef slug="who-report" label="WHO2023" />
+```
+
+**Footnote definition:**
+```jsx
+<Footnote slug="who-report" label="WHO2023">
+  World Health Organization. "Universal Health Coverage Report 2023."
+</Footnote>
+```
+
+**Props:**
+- `slug`: Internal identifier for linking (e.g., "who-report") - use this to connect refs to footnotes
+- `label`: Visible text shown to user (e.g., "WHO2023")
+
+**Features:**
+- Click the label to jump to the footnote
+- Click the ↩ arrow to jump back to where you were reading
+- Reuse the same footnote multiple times by using the same `slug`
+- Decouple visible labels from internal references
