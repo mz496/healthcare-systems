@@ -20,3 +20,13 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Fix anchor links being hidden behind fixed header */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Additional scroll margin for anchor targets */
+[id] {
+  scroll-margin-top: 80px;
+}

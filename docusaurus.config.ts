@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -38,19 +38,19 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
-      title: 'Healthcare',
+      title: 'Healthcare systems',
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'sidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
         },
       ],
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} Healthcare.`,
+      copyright: `https://matthewzhu.com`,
     },
     prism: {
       theme: prismThemes.github,

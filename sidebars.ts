@@ -1,11 +1,11 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
-  tutorialSidebar: [
+  sidebar: [
     {
       type: 'category',
-      label: 'Tutorial',
-      items: ['intro'],
+      label: 'Scratch work',
+      items: ['examples', 'scribbles'],
     },
   ],
 };

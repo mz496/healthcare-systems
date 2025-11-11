@@ -1,0 +1,71 @@
+---
+sidebar_position: 2
+---
+
+# Footnotes
+
+This page demonstrates how to create Wikipedia-style footnotes with custom nicknames.
+
+## How Footnotes Work
+
+Footnotes allow you to cite sources or add additional context without cluttering the main text. Here's an example with custom nicknames:
+
+The healthcare industry in the United States is valued at over $4 trillion annually<sup>[[source1]](#footnote-source1)</sup>. Many countries are working to improve universal healthcare coverage<sup>[[WHO2023]](#footnote-WHO2023)</sup>, while others focus on reducing costs through preventive care<sup>[[cdc-report]](#footnote-cdc-report)</sup>.
+
+You can also reference the same footnote multiple times. For instance, the WHO report<sup>[[WHO2023]](#footnote-WHO2023)</sup> mentions this again.
+
+## Multiple References
+
+Some facts require multiple sources. The average life expectancy has increased globally<sup>[[source1]](#footnote-source1)</sup><sup>[[WHO2023]](#footnote-WHO2023)</sup> over the past century.
+
+---
+
+## References
+
+<div style={{fontSize: '0.9rem', lineHeight: '1.8'}}>
+
+<div id="footnote-source1">
+  <strong>[source1]</strong> Centers for Medicare & Medicaid Services. "National Health Expenditure Data." 2024.
+  <a href="#user-content-ref-source1" title="Jump back to reference"> ↩</a>
+</div>
+
+<div id="footnote-WHO2023">
+  <strong>[WHO2023]</strong> World Health Organization. "Universal Health Coverage Report 2023." WHO Publications.
+  <a href="#user-content-ref-WHO2023" title="Jump back to reference"> ↩</a>
+</div>
+
+<div id="footnote-cdc-report">
+  <strong>[cdc-report]</strong> CDC. "Preventive Care and Cost Reduction Study." Centers for Disease Control and Prevention, 2024.
+  <a href="#user-content-ref-cdc-report" title="Jump back to reference"> ↩</a>
+</div>
+
+</div>
+
+---
+
+## Tips for Using Footnotes
+
+1. **Custom nicknames**: Use descriptive names like `[source1]`, `[WHO2023]`, or `[study-name]` instead of just numbers
+2. **Consistent formatting**: Keep your footnote IDs consistent (e.g., `footnote-name` for the reference, `user-content-ref-name` for the return link)
+3. **Bidirectional links**: The ↩ symbol allows readers to jump back to where they were reading
+4. **Multiple references**: You can link to the same footnote from multiple places in your document
+
+## Alternative: Using Numbers
+
+If you prefer numbered footnotes like Wikipedia, you can do that too:
+
+Healthcare costs vary significantly by country<sup>[[1]](#fn1)</sup>, with the US spending more per capita than any other nation<sup>[[2]](#fn2)</sup>.
+
+### References (Numbered)
+
+<div style={{fontSize: '0.9rem', lineHeight: '1.8'}}>
+
+<div id="fn1">
+  <strong>[1]</strong> OECD Health Statistics 2024. <a href="#user-content-fnref1"> ↩</a>
+</div>
+
+<div id="fn2">
+  <strong>[2]</strong> Kaiser Family Foundation. "Health Costs International Comparison." 2024. <a href="#user-content-fnref2"> ↩</a>
+</div>
+
+</div>

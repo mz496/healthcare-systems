@@ -1,0 +1,94 @@
+# Scribbles
+
+To be organized.
+
+
+## Main timeline of events in US healthcare
+TODO: clean up sources
+- 19xx timelines: [CATO original sin](https://www.cato.org/study/original-sin-us-health-policy)
+- ICHRA timelines: [Thatch blog](https://thatch.com/blog/the-story-of-ichra)
+- [CATO writeup on ending tax exclusion](https://www.cato.org/policy-analysis/end-tax-exclusion-employer-sponsored-health-insurance-return-1-trillion-workers-who); mine their sources for a better historical record.
+
+Timeline
+- 1913: second federal income tax (16th Amendment)
+- 1920s: treasury officials exclude group insurance from income-tax base
+- 1942: wage control act limited wage growth for inflation reasons but excluded healthcare benefits from being counted as wages (effectively endorsing this)
+- 1953: wage ceilings off
+- 1954: congress explicitly codifies tax exclusion for businesses (TODO: check that this is right wording)
+- 2010s: ACA
+  - Bans, among other things, individual underwriting.
+  - Requires everyone to have coverage or face a penalty. Great for pre-existing conditions/unhealthy people, bad for healthy people.
+  - 2019: excise tax to fund ACA with high-cost employer sponsored plans failed twice: [Cadillac tax](https://www.npr.org/sections/health-shots/2019/08/14/750859901/cadillac-tax-on-generous-health-plans-may-be-headed-to-congressional-junkyard)
+- 2017: American Health Care Act (AHCA) fails in Senate
+- 2017: Tax Cuts and Jobs Act (TCJA): starting 2019, federal penalty reduced to 0 for not having coverage; some states still have it (such as CA)
+- 2021: American Rescue Plan Act (ARPA): capped ACA premiums at 8.5% income; expiring end of 2022
+- 2022: Inflation Reduction Act (IRA): extended cap on ACA premiums to end of 2025
+
+
+
+
+
+
+## Modern concepts in existence today
+
+### ICHRAs (2020-)
+
+#### History
+- 2016: QSEHRA (Qualified Small Employer Health Reimbursement Arrangement) introduced; precursor to ICHRA.
+- 2020: ICHRA officially enacted.
+
+### Self-funded health plans (1970?-)
+
+- ERISA (Employee Retirement Income Security Act, 1974) enables this.
+
+#### Other tidbits
+- nearly half of employers provide self-funded health insurance; [2018 data](https://www.dol.gov/sites/dolgov/files/EBSA/researchers/statistics/retirement-bulletins/annual-report-on-self-insured-group-health-plans-2021.pdf) and steady increases with [2022 data](https://www.dol.gov/sites/dolgov/files/EBSA/researchers/statistics/retirement-bulletins/annual-report-on-self-insured-group-health-plans-2025.pdf)
+- most large employers self-fund; [2025 data](https://www.kff.org/health-costs/2025-employer-health-benefits-survey/#7ba66406-39e9-4413-bb1e-e4dda7a46a20)
+- TODO: lasering out in stop-loss = bad? [source](https://www.gninsurance.com/group-health/self-funded/understanding-stop-loss-reinsurance/)
+
+### Prior authorization
+- Supposedly, we are going to get real-time digital prior auth by 2027. (source)[https://www.ahip.org/news/press-releases/health-plans-take-action-to-simplify-prior-authorization]
+- 2024: Improving Seniors’ Timely Access to Care Act of 2024 (H.R. 8702): failed to reduce requirements for prior auth (source)[https://www.ama-assn.org/practice-management/medicare-medicaid/congress-fails-stop-283-medicare-payment-cut-2025].
+
+### Other
+
+From https://yuzu.health/blog/evolution-of-network-plans:
+
+- Networks: for solving the problem for employers of finding trustworthy providers for the employees
+  - Direct contracting: employer negotiates with hospital in the area
+  - Tiered networks: add a new network for this purpose (?)
+  - Types: HMO (Health Maintenance Organization), EPO (Exclusive Provider Organization), PPO (Preferred Provider Organization).
+- Reference-Based Pricing: also how network providers adjudicate out-of-network claims (100%, 140%, 200%)
+
+
+
+## "Fixes" with tech
+
+- Forward (2016-2024): tech-enabled direct primary care business based on a cash-pay model that doesn't take insurance
+- Amperos (2024-): seed 2024; doing somewhere between 5-10M in revenue as of late 2025. AI phone calls for denials/collections/prior auth (plus some browser stuff) for providers. This definitely leads to an arms race bc insurance on the other side is billed per-case, so now on top of their existing adversarialness, they also have anti-AI measures against inefficient calls where they will just hang up if they detect AI.
+- Tandem (2024-): 37M series A as of June 2025. They make money off pharma contracts so that they can provide their main product for free (prior auth for pharmacies). Notably they don't do much marketing and claim to do a lot of sales through word of mouth. They made a big deal about "uplift" from better adherence to drugs using their improved prior auth rates and data-gathering (?). They have a TON of ops folks.
+- 2024: United Healthcare's Gold Card program starts to build trust-based prior auth system https://www.uhc.com/news-articles/newsroom/gold-card - seemingly admirable, but they have an incentive to increase prior auths; the JAMA source does not study administrative waste at all
+
+### Less important/tangential
+
+- Tennr (2023-): 101M series C ~June 2025. Automate patient referrals (i.e. PCP -> specialist) which is usually a fax
+
+
+
+
+
+## Other countries
+
+### France/Singapore
+
+(TODO: find sources; jotting down notes from Xavier at Aetna from Yuzu happy hour)
+
+- for small baseline costs (like preventative care that everyone should get): government pays for it, like a tax.
+- for medium incidents (need price alignment etc): citizens forced to contribute to a dedicated savings account similar in function to an HSA; price is fixed; patients are free to shop for the provider they prefer
+- for large incidents (loss drivers): that is what the insurance is for
+
+
+
+## Glossary
+- DPC: direct primary care
+- PBM: pharmacy benefit manager
