@@ -6,49 +6,168 @@ Not super organized, but a bit more organized than scribbles.
 
 Healthcare is a system for strangers to take care of each other.
 
-## What even is healthcare
+This aims to be a snapshot of how the US healthcare system works in 2026.
+
+We'll start with a simple idealized model of healthcare and build up the implications one by one to put the many layers of the system into perspective.
+
+
+
+
+## Care is between a Patient and a Provider
 
 This is you, the Patient. Your body is a very complex, very important machine.
 
-But healthcare can be simple. Let's take the simplest possible case. It's just you and a Provider. We will keep money and modern medicine in the equation because those are pretty unequivocally useful concepts.
+But healthcare can be simple. Let's take the simplest possible case. We will keep trade and modern medicine in the equation because those are pretty widely accepted as useful concepts, i.e. there will be no "I introspect what is wrong with me at any point and then research the best natural remedy or manufacture my own remedy from raw ingredients" here.
 
-Let's say the Provider is magical and has infinite knowledge (of all fields of medicine, your medical history, and your lifestyle) and time (to dedicate to think about you, think about advances in the field and what that means for you, etc). Because of this, you trust them infinitely with your life.
+It's just you and a Provider. Let's say the Provider is magical and has infinite knowledge (of all fields of medicine, all relevant technologies, your medical history, and your lifestyle) and time (to dedicate to think about you, think about advances in the field and what that means for you, etc). Because of this, you trust them infinitely with your life.
 
-Roughly, there is proactive care (when you think nothing is going wrong) and reactive care (when you think something looks wrong).
+There is proactive care (when you think nothing is going wrong) and reactive care (when you think something looks wrong). Both are roughly the same:
 
-Proactive care looks like:
 - You go to see the Provider.
-- Your Provider uses their infinite knowledge and care to understand what people of your age range, ethnicity, or what-have-you should do. They might run some tests or recommend some drug, or they could just say everything is fine.
-- The Provider collects money from you in exchange for their labor + any goods they dispense you.
+- Your Provider uses their infinite knowledge and care to understand what you should do today and going forward in order to optimize your overall well-being as a person of your age, sex assigned at birth, or what-have-you, plus possibly any conditions you observe. They might run some tests, recommend some drug, schedule follow-up visits later, or just say everything is fine.
+- The Provider collects money from you at a fair price in exchange for their service and any goods they dispense you, which, because of their infinite knowledge, is correct. Everyone is happy!
 
-Reactive care looks like:
-- You go to see a Provider because your xyz hurts.
-- They run some tests and operations and recommend a course of action, possibly across multiple visits.
-- The Provider collects money from you in exchange for their labor + any goods they dispense you.
+Everything else on top comes from the many real-world realities that we have to patch in a way that balances out everyone's incentives.
 
-And importantly, 
-- Everyone is happy with this exchange.
 
-See (The Lanby (2021-))[https://www.thelanby.com/]
 
-## Who pays for it: a taxonomy
 
-Source: [Yuzu blog](https://yuzu.health/blog/the-self-funded-renaissance)
 
-TODO: a treelike diagram. Make them link out to pages.
 
-Self-funded:
-- Level-insured (All Savers, Gravie, Sana Benefits, Poppins Health)
-- Traditional self-insurance (Meritain, UHC, Cigna)
 
-Fully-insured:
-- Individual marketplace
-  - Medicare/Medicare Advantage (Bright, Clover, Devoted)
-  - Other individual ACA (Bright, Oscar)
-- Small group (UHC, Oscar, many others)
-- Large group (UHC, Cigna, Aetna, many others)
+## Payers
 
-Employer
+If we ideologically think it's right to value life and health and are willing to take on the human time and energy costs (some would say as a direct implication of the Declaration of Independence), how much financial responsibility does each party take?
+
+In the US, we have a mix of private and public programs, often supplementing the Patient's responsibility.
+- TODO: Link out to sidebar on brief history of US employer-sponsored healthcare starting from 1942 wage controls.
+- TODO: Link out to "should employers be the ones paying?"
+- TODO: Sidebar on "should providers be involved with money?"
+- TODO: Single-payer around the world; its advantages and disadvantages.
+
+Breakdown of the ~340m Americans in 2024 ([US Census Bureau](https://www.census.gov/library/publications/2025/demo/p60-288.html)) (TODO: diagram this like a pie chart):
+- 92%: insured (note that this adds up to more than 92% due to overlaps)
+    - 53.8% (~181m people): employer-sponsored insurance
+    - 19.1%: Medicare (original Medicare + Medicare Advantage; Clover, Devoted, Bright, Humana)
+    - 17.6%: Medicaid (original Medicaid + Medicaid Managed Care; Centene/Ambetter, Molina, UHC)
+    - 10.7%: direct-purchase coverage (ACA exchange + off-exchange individual; Oscar, Bright, Ambetter, Molina)
+    - 2.8%: TRICARE (government-sponsored military)
+    - 1.2%: VA, CHAMPVA (veterans)
+- 8%: uninsured
+
+From now on, we will focus on the employer-sponsored insurance segment, meaning the Payer is equivalent to the Insurance and is not, say, the government or the Patient themselves.
+
+
+
+
+
+
+
+## (Employer-sponsored) Insurance: what if the Patient doesn't have the money right now?
+
+We have added on two new parties: the Employer and the Insurer.
+
+In proactive care, a preventative visit can cost as little as $100, and in reactive care, a heart transplant could cost up to $1 million. Certain events are much less predictable than others and rightly get very different treatment.
+
+Insurance, i.e. the Patient's employer, takes on most of these costs. In the US, this is often synonymous with healthcare, but it's only one part. Ultimately, this is about risk pooling: which pool do you pay money to when you are healthy so that you can withdraw from it for care, both proactive and reactive?
+
+TODO: primer on initial models of indemnity.
+
+Today though, this is where most people's negative interactions begin:
+- Patient gets (or tries to get) care
+- Provider checks with, or bounces them to, Insurer to make sure the Provider will get paid
+- Possible black hole of inefficient communications due to one or more of:
+  - the Patient may not know what they are paying
+  - the Provider can set whatever price they want
+  - the Insurer can refuse it or require lots of extra documentation before paying (suspecting that certain procedures are not necessary, for example)
+- End state is that Insurer and Patient potentially both cover some of the cost to be sent to the Provider and other parties involved. We will get to those other parties. For now, we will settle with the fact that for an individual transaction, money flows out from Patient + Insurer.
+
+TODO: flow diagram like the one here: https://waitbutwhy.com/2021/04/lanby.html
+
+Asides:
+- TODO: Sidebar on: Insurance works a little differently in healthcare if we define it as "providing protection against a possible eventuality" since we also use it for proactive care. Should the government fund proactive care? Should insurance only be for reactive care? Probably yes and yes; study other countries like Singapore. But we are not there yet.
+- TODO: Link out to "should employers be the ones we create risk pools around?" Probably yes, they are the most convenient natural grouping we have. See [Yuzu ICHRA post](https://yuzu.health/blog/a-clear-explanation-of-ichras) ACA and individual mandate 
+- TODO: what happens to small employers \<50, they are forced into small-group where they get risk-pooled with other small employers?
+
+Breakdown of the employer-funded market ([KFF, 2025](https://www.kff.org/health-costs/2025-employer-health-benefits-survey/#7ba66406-39e9-4413-bb1e-e4dda7a46a20)) (TODO: diagram in something like a pie chart):
+- Self-funded (67%, 120m people):
+    - Level-funded (All Savers, Gravie, Sana Benefits, Poppins Health)
+    - Traditional self-insurance as TPAs (Meritain, UHC, Cigna)
+- Fully-insured (33%, 60m people) (UHC, Cigna, Aetna, Oscar, many others):
+    - Small group (\<50 employees)
+    - Large group (50+ employees)
+
+
+
+
+
+## Provider Admin at clinics/hospitals/practices
+
+Where are the Patients going, if the Provider is not going to the Patient directly? Where is all of the equipment and systems that Providers use to do their work and record information?
+
+Admin at the Provider's place of work are often-maligned
+
+
+
+
+
+
+## Primary Care Physicians and Specialists
+
+It is not very humanly feasible for one person to be an expert at everything, so we distinguish between generalists and specialists both in theory (starting from medical school) and in practice (bestowing specialized roles and titles on them).
+
+So when we say Provider, that could be one of these professional categories:
+- Primary Care Physician (generalist)
+- Specialist
+
+That's different from access control, which depends on the type of insurance plan:
+- Health Maintenance Organizations (HMOs) almost always dictate PCP referral for specialists as a defining feature, putting primary care first
+- Exclusive Provider Organizations (EPOs): usually no referral needed
+- Preferred Provider Organizations (PPOs): see specialists directly as a main selling point
+
+
+
+
+## Drug Manufacturers
+
+The Provider needs to get medications from a pharmaceutical company that put in the work to test and mass-produce them, which we will call the Drug Manufacturer. They also want a cut of the money.
+
+So now we tack on these parties:
+- Pharmacist
+- Pharmacy Benefit Manager (PBM)
+- Drug Manufacturer
+
+TODO: flow diagram like the one in https://yuzu.health/blog/why-your-meds-cost-so-much
+
+PBMs are quite concentrated, with the top four holding 67% of market share in 2023 ([AMA source](https://www.ama-assn.org/health-care-advocacy/access-care/these-4-big-names-are-largest-pbms-us)).
+
+
+
+
+## Network
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+See also (TODO clean up):
+- [The Lanby (2021-)](https://www.thelanby.com/), a direct primary care subscription service
+- Forward (2016-2024): tech-enabled direct primary care business based on a cash-pay model that didn't take insurance
+- HMOs centered around primary care
+
+
 
 
 
