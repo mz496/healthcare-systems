@@ -5,7 +5,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Scratch work',
-      items: ['examples', 'scribbles'],
+      items: ['examples', 'sketches', 'scribbles'],
     },
   ],
 };
