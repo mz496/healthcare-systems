@@ -26,6 +26,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/', // Docs at the root
           sidebarPath: './sidebars.ts',
         },
         blog: false,
@@ -39,14 +40,7 @@ const config: Config = {
   themeConfig: {
     navbar: {
       title: 'Healthcare systems',
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'sidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-      ],
+      items: [],
     },
     footer: {
       style: 'dark',
