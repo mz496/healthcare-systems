@@ -17,7 +17,7 @@ We'll start with a simple idealized model of healthcare and build up the implica
 
 This is you, the Patient. Your body is a very complex, very important machine.
 
-But healthcare can be simple. Let's take the simplest possible case. We will keep trade and modern medicine in the equation because those are pretty widely accepted as useful concepts, i.e. there will be no "I introspect what is wrong with me at any point and then research the best natural remedy or manufacture my own remedy from raw ingredients" here.
+But healthcare can be simple. Let's take the simplest possible case. We will keep trade and modern medicine in the equation because those are pretty widely accepted as useful concepts, i.e. there will be no "I barter my way through the neighborhood in search of a doctor who will help me in exchange for a chain of favors" or "I manufacture my own remedy from raw ingredients" here.
 
 It's just you and a Provider. Let's say the Provider is magical and has infinite knowledge (of all fields of medicine, all relevant technologies, your medical history, and your lifestyle) and time (to dedicate to think about you, think about advances in the field and what that means for you, etc). Because of this, you trust them infinitely with your life.
 
@@ -33,9 +33,45 @@ Everything else on top comes from the many real-world realities that we have to 
 
 
 
+## Types of providers
+
+It's not very feasible for one person to be an expert at everything. They are much more likely to be wrong when asked a question they've spent four years studying in bits and pieces versus one they've spent six additional years studying in great detail. We distinguish between generalists and specialists both in theory (how medical school and certifications are structured) and in practice (bestowing specialized roles and titles on them once they finish).
+
+So when we say Provider, that could be one of these professional categories:
+- Primary Care Physician (generalist)
+- Specialist
+- Doctors
+
+Logistically, it's not feasible for one person to do everything, either. Supporting staff are easy to overlook but still directly help with smaller care-related tasks like taking vitals, triaging, or assisting with procedures when doctors are doing other higher-level tasks: nurses, medical assistants, technicians.
+
+However, they all roll up to the accountable PCP/specialist/doctor, so we will exclude them for now.
+
+TODO: diagram
+
+- TODO: Sidebar for later: That's different from access control, which roughly aims to put cost on the decision-maker for which conversations are most useful (i.e. restricting specialists behind PCPs or being able to see specialists directly for a higher cost; HMO/EPO/PPO insurance plans differ significantly on this front).
 
 
-## Payers
+
+
+
+## Where medicine comes from
+
+The Provider needs to get medications from a pharmaceutical company that put in the work to test and mass-produce them, which we will call the Drug Manufacturer.
+
+TODO: flow diagram like the one in https://yuzu.health/blog/why-your-meds-cost-so-much
+
+
+
+
+
+
+
+
+
+
+## Who is paying
+
+So far, we have only walked through what care looks like. But who is paying?
 
 If we ideologically think it's right to value life and health and are willing to take on the human time and energy costs (some would say as a direct implication of the Declaration of Independence), how much financial responsibility does each party take?
 
@@ -63,9 +99,11 @@ From now on, we will focus on the employer-sponsored insurance segment, meaning 
 
 
 
-## (Employer-sponsored) Insurance: what if the Patient doesn't have the money right now?
 
-We have added on two new parties: the Employer and the Insurer.
+
+## (Employer-sponsored) insurance
+
+We have two new parties: the Employer and the Insurer.
 
 In proactive care, a preventative visit can cost as little as $100, and in reactive care, a heart transplant could cost up to $1 million. Certain events are much less predictable than others and rightly get very different treatment.
 
@@ -86,7 +124,7 @@ TODO: flow diagram like the one here: https://waitbutwhy.com/2021/04/lanby.html
 
 Asides:
 - TODO: Sidebar on: Insurance works a little differently in healthcare if we define it as "providing protection against a possible eventuality" since we also use it for proactive care. Should the government fund proactive care? Should insurance only be for reactive care? Probably yes and yes; study other countries like Singapore. But we are not there yet.
-- TODO: Link out to "should employers be the ones we create risk pools around?" Probably yes, they are the most convenient natural grouping we have. See [Yuzu ICHRA post](https://yuzu.health/blog/a-clear-explanation-of-ichras) ACA and individual mandate 
+- TODO: Link out to "should employers be the ones we create risk pools around?" Probably yes, they are the most convenient natural grouping we have. See [Yuzu ICHRA post](https://yuzu.health/blog/a-clear-explanation-of-ichras)
 - TODO: what happens to small employers \<50, they are forced into small-group where they get risk-pooled with other small employers?
 
 Breakdown of the employer-funded market ([KFF, 2025](https://www.kff.org/health-costs/2025-employer-health-benefits-survey/#7ba66406-39e9-4413-bb1e-e4dda7a46a20)) (TODO: diagram in something like a pie chart):
@@ -99,47 +137,34 @@ Breakdown of the employer-funded market ([KFF, 2025](https://www.kff.org/health-
 
 
 
+## Other admin folks
+
+We have chosen our main actors in the system carefully to show where the value is being produced: doctors directly caring for people, pharma companies directly doing research and producing drugs that improve outcomes, and the payers funding the system.
+
+Everything else is a second-order effect of the complexity to make sure the value flows from producer to consumer. These provide value of their own, of course, but it is less clear that they are 
+
+### Running the drug delivery process
+
+- TODO: Sidebar for later: Pharmacists and PBMs (Pharmacy Benefits Manager), which are quite concentrated, with the top four holding 67% of market share in 2023 ([AMA source](https://www.ama-assn.org/health-care-advocacy/access-care/these-4-big-names-are-largest-pbms-us)).
 
 
-## Provider Admin at clinics/hospitals/practices
+
+
+### Administration of the clinics/hospitals/practices
 
 Where are the Patients going, if the Provider is not going to the Patient directly? Where is all of the equipment and systems that Providers use to do their work and record information?
 
-Admin at the Provider's place of work are often-maligned
+TODO: Admin at the Provider's place of work are often-maligned folk who keep things running.
 
 
 
 
 
 
-## Primary Care Physicians and Specialists
-
-It is not very humanly feasible for one person to be an expert at everything, so we distinguish between generalists and specialists both in theory (starting from medical school) and in practice (bestowing specialized roles and titles on them).
-
-So when we say Provider, that could be one of these professional categories:
-- Primary Care Physician (generalist)
-- Specialist
-
-That's different from access control, which depends on the type of insurance plan:
-- Health Maintenance Organizations (HMOs) almost always dictate PCP referral for specialists as a defining feature, putting primary care first
-- Exclusive Provider Organizations (EPOs): usually no referral needed
-- Preferred Provider Organizations (PPOs): see specialists directly as a main selling point
 
 
 
 
-## Drug Manufacturers
-
-The Provider needs to get medications from a pharmaceutical company that put in the work to test and mass-produce them, which we will call the Drug Manufacturer. They also want a cut of the money.
-
-So now we tack on these parties:
-- Pharmacist
-- Pharmacy Benefit Manager (PBM)
-- Drug Manufacturer
-
-TODO: flow diagram like the one in https://yuzu.health/blog/why-your-meds-cost-so-much
-
-PBMs are quite concentrated, with the top four holding 67% of market share in 2023 ([AMA source](https://www.ama-assn.org/health-care-advocacy/access-care/these-4-big-names-are-largest-pbms-us)).
 
 
 
