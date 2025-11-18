@@ -19,12 +19,14 @@ We will need to ground ourselves in baseline ideas that are widely accepted as t
 
 ## Care is between a Patient and a Provider
 
-Your body is a very complex, very important machine, but healthcare can be simple. Let's take the simplest possible case with just you and a Provider. Let's say the Provider is magical and has infinite knowledge (of all fields of medicine, all relevant technologies, your medical history, and your lifestyle) and time (to dedicate to think about you, think about advances in the field and what that means for you, etc). Because of this, you trust them infinitely with your life.
+Your body is a very complex, very important machine, but healthcare can be simple. Just take a look at the Hippocratic Oath.
+
+Let's take the simplest possible case with just you and a Provider. Let's say the Provider is magical and has infinite knowledge (of all fields of medicine, all relevant technologies, your medical history, and your lifestyle) and time (to dedicate to think about you, think about advances in the field and what that means for you, etc). Because of this, you trust them infinitely with your life.
 
 There is proactive care (when you think nothing is going wrong) and reactive care (when you think something looks wrong). Both are roughly the same:
 
 - You go to see the Provider.
-- Your Provider uses their infinite knowledge and care to understand what you should do today and going forward in order to optimize your overall well-being as a person of your age, sex assigned at birth, or what-have-you, plus possibly any conditions you observe. They might run some tests, recommend some drug, schedule follow-up visits later, or just say everything is fine.
+- Your Provider uses their infinite knowledge and care to understand what you should do today and going forward in order to optimize your overall well-being as a person of your age, sex assigned at birth, or what-have-you, plus possibly any conditions you observe. They might do any combination of things, including but not limited to: operating on you, running tests, recommending some drug or other course of action, scheduling follow-up visits later, or saying everything is fine.
 - The Provider collects money from you at a fair price in exchange for their service and any goods they dispense you, which, because of their infinite knowledge, is correct. Everyone is happy!
 
 ```mermaid
@@ -33,7 +35,7 @@ graph LR
     Provider -->|gives goods and services to| Patient
 ```
 
-Everything else on top comes from the many real-world realities that we have to patch in a way that scales to many actors in the system.
+Everything else on top comes from the real-world realities of both imperfections in how things actually play out and also having to scale this to many, many people.
 
 
 
@@ -41,20 +43,23 @@ Everything else on top comes from the many real-world realities that we have to 
 
 ## Types of providers
 
-It's not very feasible for one person to be an expert at everything. They are much more likely to be wrong when asked a question they've spent four years studying in bits and pieces versus one they've spent six additional years studying in great detail. We distinguish between generalists and specialists both in theory (how medical school and certifications are structured) and in practice (bestowing specialized roles and titles on them once they finish).
+i.e. What happens when one person cannot know or do everything?
 
-So when we say Provider, that could be one of these professional categories:
-- Primary Care Physician (generalist)
-- Specialist
-- Doctors
+Someone is more likely to be wrong when asked a question they've spent four years studying in bits and pieces versus one they've spent six additional years studying in great detail. They are also physically limited in their time and attention on the job.
 
-Logistically, it's not feasible for one person to do everything, either. Supporting staff are easy to overlook but still directly help with smaller care-related tasks like taking vitals, triaging, or assisting with procedures when doctors are doing other higher-level tasks: nurses, medical assistants, technicians.
+We distinguish between generalists and specialists both in theory (how medical school and certifications are structured) and in practice (bestowing specialized roles and titles on them once they finish). Other supporting staff still directly help with smaller care-related tasks like taking vitals, triaging, or assisting with procedures when doctors are doing other higher-level tasks: nurses, medical assistants, technicians.
 
-However, we will exclude them for now as they often roll up to the accountable PCP/specialist/doctor.
+So when we say Provider, that generally could be one of these professional categories:
+- Primary Care Physician fans out into Specialists and others
+- Attending Physician fans out into Consulting Physicians and others
+- Attending Surgeon fans out into Assisting Surgeons, Specialists, and others
 
-TODO: There are still meaningful handoffs here (see: medical errors, bad handwriting).
+We will put all except the one primarily accountable under the bucket of supporting staff.
 
-- TODO: Sidebar for later: That's different from access control, which roughly aims to put cost on the decision-maker for which conversations are most useful (i.e. restricting specialists behind PCPs or being able to see specialists directly for a higher cost; HMO/EPO/PPO insurance plans differ significantly on this front).
+TODO: diagram
+
+- TODO: Link to Russell's post on shadowing a healthcare worker
+- TODO: Sidebar for later: This is different from access control, which roughly aims to put cost on the decision-maker for which conversations are most useful (i.e. restricting specialists behind PCPs or being able to see specialists directly for a higher cost; HMO/EPO/PPO insurance plans differ significantly on this front).
 - TODO: Sidebar for later: lots of people are just more cautious vs less cautious at the doctor, but PCPs are usually pretty trigger-happy when it comes to referrals. What does this do to the incentives
 
 
