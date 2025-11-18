@@ -10,16 +10,16 @@ This aims to be a snapshot of how the US healthcare system works in 2026.
 
 We'll start with a simple idealized model of healthcare and build up the implications one by one to put the many layers of the system into perspective.
 
+We will need to ground ourselves in baseline ideas that are widely accepted as true:
+- Trade and money are useful. There will be no "I barter my way through the neighborhood in search of a doctor who will help me in exchange for a chain of favors" here.
+- Modern medicine is useful. Certainly, it has its strengths and weaknesses when compared to natural and holistic remedies, which also have their own strengths and weaknesses. There will be no "I manufacture my own remedy from raw ingredients" here.
+
 
 
 
 ## Care is between a Patient and a Provider
 
-This is you, the Patient. Your body is a very complex, very important machine.
-
-But healthcare can be simple. Let's take the simplest possible case. We will keep trade and modern medicine in the equation because those are pretty widely accepted as useful concepts, i.e. there will be no "I barter my way through the neighborhood in search of a doctor who will help me in exchange for a chain of favors" or "I manufacture my own remedy from raw ingredients" here.
-
-It's just you and a Provider. Let's say the Provider is magical and has infinite knowledge (of all fields of medicine, all relevant technologies, your medical history, and your lifestyle) and time (to dedicate to think about you, think about advances in the field and what that means for you, etc). Because of this, you trust them infinitely with your life.
+Your body is a very complex, very important machine, but healthcare can be simple. Let's take the simplest possible case with just you and a Provider. Let's say the Provider is magical and has infinite knowledge (of all fields of medicine, all relevant technologies, your medical history, and your lifestyle) and time (to dedicate to think about you, think about advances in the field and what that means for you, etc). Because of this, you trust them infinitely with your life.
 
 There is proactive care (when you think nothing is going wrong) and reactive care (when you think something looks wrong). Both are roughly the same:
 
@@ -27,7 +27,13 @@ There is proactive care (when you think nothing is going wrong) and reactive car
 - Your Provider uses their infinite knowledge and care to understand what you should do today and going forward in order to optimize your overall well-being as a person of your age, sex assigned at birth, or what-have-you, plus possibly any conditions you observe. They might run some tests, recommend some drug, schedule follow-up visits later, or just say everything is fine.
 - The Provider collects money from you at a fair price in exchange for their service and any goods they dispense you, which, because of their infinite knowledge, is correct. Everyone is happy!
 
-Everything else on top comes from the many real-world realities that we have to patch in a way that balances out everyone's incentives.
+```mermaid
+graph LR
+    Patient -->|gives money to| Provider
+    Provider -->|gives goods and services to| Patient
+```
+
+Everything else on top comes from the many real-world realities that we have to patch in a way that scales to many actors in the system.
 
 
 
@@ -44,11 +50,12 @@ So when we say Provider, that could be one of these professional categories:
 
 Logistically, it's not feasible for one person to do everything, either. Supporting staff are easy to overlook but still directly help with smaller care-related tasks like taking vitals, triaging, or assisting with procedures when doctors are doing other higher-level tasks: nurses, medical assistants, technicians.
 
-However, they all roll up to the accountable PCP/specialist/doctor, so we will exclude them for now.
+However, we will exclude them for now as they often roll up to the accountable PCP/specialist/doctor.
 
-TODO: diagram
+TODO: There are still meaningful handoffs here (see: medical errors, bad handwriting).
 
 - TODO: Sidebar for later: That's different from access control, which roughly aims to put cost on the decision-maker for which conversations are most useful (i.e. restricting specialists behind PCPs or being able to see specialists directly for a higher cost; HMO/EPO/PPO insurance plans differ significantly on this front).
+- TODO: Sidebar for later: lots of people are just more cautious vs less cautious at the doctor, but PCPs are usually pretty trigger-happy when it comes to referrals. What does this do to the incentives
 
 
 
