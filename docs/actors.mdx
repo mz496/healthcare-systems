@@ -6,13 +6,15 @@ slug: /
 
 Healthcare is a system for strangers to take care of each other.
 
-This aims to be a snapshot of how the US healthcare system works in 2026.
-
-We'll start with a simple idealized model of healthcare and build up the implications one by one to put the many layers of the system into perspective.
+We'll start with a simple idealized model of healthcare and build up the implications in increasing levels of complexity to put the many layers of the system into perspective.
 
 We will need to ground ourselves in baseline ideas that are widely accepted as true:
-- Trade and money are useful. There will be no "I barter my way through the neighborhood in search of a doctor who will help me in exchange for a chain of favors" here.
-- Modern medicine is useful. Certainly, it has its strengths and weaknesses when compared to natural and holistic remedies, which also have their own strengths and weaknesses. There will be no "I manufacture my own remedy from raw ingredients" here.
+- Trade, money, and private enterprise are good for transmitting trust and fostering innovation. There will be no "I barter my way through the neighborhood in search of a doctor who will help me in exchange for a chain of favors" here.
+- Treatment based on scientific evidence and technological advances is useful. Certainly, "modern"/conventional/allopathic medicine has its strengths and weaknesses when compared to natural and holistic remedies, which have their own strengths and weaknesses, but there will be no "I manufacture my own remedy from raw ingredients" here.
+
+Other stances:
+- For the purposes of this research, I am not intrinsically motivated by the history of healthcare or its industry, only insofar as it helps us decide where to go next. So I am intentionally light on historical details.
+- I am just a random tech person who doesn't work in healthcare, is generally optimistic about technology, business, and human progress, but is generally skeptical about most businesses' long-term impacts. I built this as part of my research into the healthcare space while interviewing at a few healthcare startups in 2025, and I do not profit by taking any particular stance.
 
 
 
@@ -25,8 +27,8 @@ Let's take the simplest possible case with just you and a Provider. Let's say th
 
 There is proactive care (when you think nothing is going wrong) and reactive care (when you think something looks wrong). Both are roughly the same:
 
-- You go to see the Provider.
-- Your Provider uses their infinite knowledge and care to understand what you should do today and going forward in order to optimize your overall well-being as a person of your age, sex assigned at birth, or what-have-you, plus possibly any conditions you observe. They might do any combination of things, including but not limited to: operating on you, running tests, recommending some drug or other course of action, scheduling follow-up visits later, or saying everything is fine.
+- You and the Provider meet.
+- Your Provider uses their infinite knowledge and care to understand what you should do today and going forward in order to optimize your overall well-being as a person of your age, sex assigned at birth, or other traits, plus possibly any conditions you observe. They might do any combination of things, including but not limited to: operating on you, running tests, recommending some drug or other course of action, scheduling follow-up visits later, or saying everything is fine.
 - The Provider collects money from you at a fair price in exchange for their service and any goods they dispense you, which, because of their infinite knowledge, is correct. Everyone is happy!
 
 ```mermaid
@@ -35,7 +37,12 @@ graph LR
     Provider -->|gives goods and services to| Patient
 ```
 
-Everything else on top comes from the real-world realities of both imperfections in how things actually play out and also having to scale this to many, many people.
+Everything else on top comes from the real-world realities of both imperfections in how things actually play out and also having to scale this to many, many people. Let's add in some other basic truths that are unavoidable in this modern framework:
+
+- Humans have lots of parts that have layers of complexity to them. What happens when one person cannot know or do everything? (Types of providers)
+- Where is the research, development, and production of treatments and drugs happening? (Where pharmaceutical products come from)
+- Given that we have multiple people, products, and pieces of complex equipment, how do we make sure they're accessible at a single point-of-care? (Physical infrastructure)
+- How do we get people to want to do this work? (Who is paying)
 
 
 
@@ -43,21 +50,22 @@ Everything else on top comes from the real-world realities of both imperfections
 
 ## Types of providers
 
-i.e. What happens when one person cannot know or do everything?
+What happens when one person cannot know or do everything?
 
-Someone is more likely to be wrong when asked a question they've spent four years studying in bits and pieces versus one they've spent six additional years studying in great detail. They are also physically limited in their time and attention on the job.
+Someone is more likely to be wrong when asked a question they've spent four years studying in bits and pieces versus one they've spent six additional years studying in great detail. Some jobs are less mentally and physically taxing and are effective training mechanisms for those less experienced. A single person is also physically limited in where they can put their time and attention on the job. (TODO surgeon 24-hour shifts).
 
-We distinguish between generalists and specialists both in theory (how medical school and certifications are structured) and in practice (bestowing specialized roles and titles on them once they finish). Other supporting staff still directly help with smaller care-related tasks like taking vitals, triaging, or assisting with procedures when doctors are doing other higher-level tasks: nurses, medical assistants, technicians.
-
-So when we say Provider, that generally could be one of these professional categories:
-- Primary Care Physician fans out into Specialists and others
-- Attending Physician fans out into Consulting Physicians and others
-- Attending Surgeon fans out into Assisting Surgeons, Specialists, and others
-
-We will put all except the one primarily accountable under the bucket of supporting staff.
+For simplicity, we will consider a single primarily accountable person as the Provider, with caveats that there are many supporting staff. Click into this TODO link to understand incentives within this space.
+- Fan-out from generalist to specialists, a common pattern both entrenched in schooling and necessity:
+    - Primary Care Physician fans out into Specialists and others
+    - Attending Physician fans out into Consulting Physicians and others
+    - Attending Surgeon fans out into Assisting Surgeons, Specialists, and others
+- Many other supporting staff directly help with care-related tasks like taking vitals, triaging, or assisting with procedures when doctors are doing other higher-level tasks: nurses, medical assistants, equipment technicians, lab technicians, etc.
+- TODO: Sending samples for analysis elsewhere involves other specialties like medical laboratory scientist/medical laboratory technologist.
+- TODO: probably more.
 
 TODO: diagram
 
+- TODO: people do actually want to have a team led by a physician; see sources here: https://www.ama-assn.org/practice-management/scope-practice/physician-led-team-based-care#:~:text=Benefits%20of%20physician%2Dled%20team,Guiding%20principles%20for%20physician%20leaders
 - TODO: Link to Russell's post on shadowing a healthcare worker
 - TODO: Sidebar for later: This is different from access control, which roughly aims to put cost on the decision-maker for which conversations are most useful (i.e. restricting specialists behind PCPs or being able to see specialists directly for a higher cost; HMO/EPO/PPO insurance plans differ significantly on this front).
 - TODO: Sidebar for later: lots of people are just more cautious vs less cautious at the doctor, but PCPs are usually pretty trigger-happy when it comes to referrals. What does this do to the incentives
@@ -66,16 +74,36 @@ TODO: diagram
 
 
 
-## Where medicine comes from
 
-The Provider needs to get medications from a pharmaceutical company that put in the work to test and mass-produce them, which we will call the Drug Manufacturer.
+## Where pharmaceutical products come from
 
-TODO: flow diagram like the one in https://yuzu.health/blog/why-your-meds-cost-so-much
+Where is the research, development, and production of treatments and drugs happening?
+
+The Provider needs to get products from a Pharmaceutical Company that put in the work to test and mass-produce them. These generally include drugs (oral, topical, etc.) and devices ()
+
+For simplicity of our diagram, we will add the minimal piece required: the flow of products from the Pharmaceutical Company to the Patient. Click on this TODO link to understand incentives within this space.
+- TODO: internal complexity: flow diagram like the one in https://yuzu.health/blog/why-your-meds-cost-so-much. See https://schaeffer.usc.edu/research/flow-of-money-through-the-pharmaceutical-distribution-system/ and verify claim: "Of a $100 expenditure on pharmaceuticals by consumers, roughly $17 goes to drug production costs, $41 accrues to the manufacturers (a third of which is net profit), and $19 accrues to insurers. PBMs keep about $5, pharmacies keep $15, and wholesalers keep about $2"
+
+Other TODO:
+
+- Sidebar: PBMs are quite concentrated, with the top four holding 67% of market share in 2023 ([AMA source](https://www.ama-assn.org/health-care-advocacy/access-care/these-4-big-names-are-largest-pbms-us)).
+- PBMs usually make money off rebates that they can get unbeknownst to the health plan. [Yuzu source](https://yuzu.health/blog/why-your-meds-cost-so-much)
+- Yuzu works with SmithRx since they are transparent in their pricing and take a per-script fee while sharing all their rebates back with the plan, eliminating conflict of interest. [Yuzu source](https://yuzu.health/blog/parts-of-a-health-plan)
 
 
 
 
 
+
+## Physical infrastructure
+
+Given that we have multiple people, products, and pieces of complex equipment, how do we make sure they're accessible at a single point-of-care?
+
+Physical house calls were common in the 19th and 20th century; they have been mostly replaced by patients going to a centralized place except in cases such as elderly care. [TODO: find a better source](https://www.battlefields.org/learn/articles/changes-medicine-during-19th-century). 
+
+This helps with scale: on the physical side, someone can buy equipment in aggregate and store it all in one place, and doctors can collaborate with one another directly.
+
+- TODO: Zingage
 
 
 
@@ -83,9 +111,11 @@ TODO: flow diagram like the one in https://yuzu.health/blog/why-your-meds-cost-s
 
 ## Who is paying
 
-So far, we have only walked through what care looks like. But who is paying?
+How do we get people to want to do this work?
 
-If we ideologically think it's right to value life and health and are willing to take on the human time and energy costs (some would say as a direct implication of the Declaration of Independence), how much financial responsibility does each party take?
+It takes a lot of time and money to train and maintain Providers' skills, develop pharmaceutical products, and keep the lights on at points-of-care. And even when everything goes right, everyone is acting perfectly in good faith, with everyone invested in a dense-ish network of trust (minus operating on someone a doctor directly knows, for example), it is still hard to make tradeoffs in the moment on what is worth doing vs. not.
+
+So after removing some idealism and adding some practicality: if we believe it's right to value life and health and are willing to take on the human time and energy costs, how much financial responsibility does each party take?
 
 In the US, we have a mix of private and public programs, often supplementing the Patient's responsibility.
 - TODO: Link out to sidebar on brief history of US employer-sponsored healthcare starting from 1942 wage controls.
@@ -103,7 +133,7 @@ Breakdown of the ~340m Americans in 2024 ([US Census Bureau](https://www.census.
     - 1.2%: VA, CHAMPVA (veterans)
 - 8%: uninsured
 
-From now on, we will focus on the employer-sponsored insurance segment, meaning the Payer is equivalent to the Insurance and is not, say, the government or the Patient themselves.
+For purposes of this writeup, we will focus on the employer-sponsored insurance segment, meaning the Payer is equivalent to the Insurance and is not, say, the government or the Patient themselves. Click this TODO link to dig deeper into incentives.
 
 
 
@@ -113,75 +143,6 @@ From now on, we will focus on the employer-sponsored insurance segment, meaning 
 
 
 
-## (Employer-sponsored) insurance
-
-We have two new parties: the Employer and the Insurer.
-
-In proactive care, a preventative visit can cost as little as $100, and in reactive care, a heart transplant could cost up to $1 million. Certain events are much less predictable than others and rightly get very different treatment.
-
-Insurance, i.e. the Patient's employer, takes on most of these costs. In the US, this is often synonymous with healthcare, but it's only one part. Ultimately, this is about risk pooling: which pool do you pay money to when you are healthy so that you can withdraw from it for care, both proactive and reactive?
-
-TODO: primer on initial models of indemnity.
-
-Today though, this is where most people's negative interactions begin:
-- Patient gets (or tries to get) care
-- Provider checks with, or bounces them to, Insurer to make sure the Provider will get paid
-- Possible black hole of inefficient communications due to one or more of:
-  - the Patient may not know what they are paying
-  - the Provider can set whatever price they want
-  - the Insurer can refuse it or require lots of extra documentation before paying (suspecting that certain procedures are not necessary, for example)
-- End state is that Insurer and Patient potentially both cover some of the cost to be sent to the Provider and other parties involved. We will get to those other parties. For now, we will settle with the fact that for an individual transaction, money flows out from Patient + Insurer.
-
-TODO: flow diagram like the one here: https://waitbutwhy.com/2021/04/lanby.html
-
-Asides:
-- TODO: Sidebar on: Insurance works a little differently in healthcare if we define it as "providing protection against a possible eventuality" since we also use it for proactive care. Should the government fund proactive care? Should insurance only be for reactive care? Probably yes and yes; study other countries like Singapore. But we are not there yet.
-- TODO: Link out to "should employers be the ones we create risk pools around?" Probably yes, they are the most convenient natural grouping we have. See [Yuzu ICHRA post](https://yuzu.health/blog/a-clear-explanation-of-ichras)
-- TODO: what happens to small employers \<50, they are forced into small-group where they get risk-pooled with other small employers?
-
-Breakdown of the employer-funded market ([KFF, 2025](https://www.kff.org/health-costs/2025-employer-health-benefits-survey/#7ba66406-39e9-4413-bb1e-e4dda7a46a20)) (TODO: diagram in something like a pie chart):
-- Self-funded (67%, 120m people):
-    - Level-funded (All Savers, Gravie, Sana Benefits, Poppins Health)
-    - Traditional self-insurance as TPAs (Meritain, UHC, Cigna)
-- Fully-insured (33%, 60m people) (UHC, Cigna, Aetna, Oscar, many others):
-    - Small group (\<50 employees)
-    - Large group (50+ employees)
-
-TODO: diagram/link out to all of the players in the self-funded space (employer has to interface with brokers; TPA has to interface with MGUs etc) in the style of https://yuzu.health/blog/parts-of-a-health-plan
-
-### Insurance "products"
-
-TODO: expand on each of these, link out and create diagrams
-- FSA (1970s-)
-- HSA with a high-deductible health plan (HDHP) (2003-): pushes market decisions onto the patient.
-- ICHRA (2020-): an individual-market health plan administered by an employer
-
-
-
-
-
-
-## Running the drug delivery process
-
-There are so many drugs and so many clinics around the country that distributing those to where they need to go is a huge task.
-
-TODO: Pharmacists and PBMs (Pharmacy Benefits Managers)
-
-- Sidebar: PBMs are quite concentrated, with the top four holding 67% of market share in 2023 ([AMA source](https://www.ama-assn.org/health-care-advocacy/access-care/these-4-big-names-are-largest-pbms-us)).
-- PBMs usually make money off rebates that they can get unbeknownst to the health plan. [Yuzu source](https://yuzu.health/blog/why-your-meds-cost-so-much)
-- Yuzu works with SmithRx since they are transparent in their pricing and take a per-script fee while sharing all their rebates back with the plan, eliminating conflict of interest. [Yuzu source](https://yuzu.health/blog/parts-of-a-health-plan)
-
-
-
-
-
-## Administration of the clinics/hospitals/practices
-
-Who is keeping the lights on at the provider's place of work, making sure they're getting paid, and making sure they have all the hospital beds/stethoscopes/hand soaps/etc. they need in order to do their jobs?
-
-TODO:
-- Admin at the Provider's place of work are often-maligned folk who keep things running.
-- Just because they are not directly caring for patients does not mean that they are unnecessary.
 
 
 ## So where is the problem?
